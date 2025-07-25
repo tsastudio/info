@@ -36,3 +36,44 @@ function loadFileData(filename) {
     }
     return gk_fileData[filename] || "";
 }
+
+// Interatividade adicional: scroll suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
+
+// Clique animado no botão do WhatsApp
+const whatsappBtn = document.querySelector(".whatsapp-link a");
+if (whatsappBtn) {
+    whatsappBtn.addEventListener("click", () => {
+        whatsappBtn.style.transform = "scale(0.95)";
+        setTimeout(() => {
+            whatsappBtn.style.transform = "scale(1)";
+        }, 150);
+    });
+}
+
+// Dark Mode Toggle
+const toggleDarkMode = document.createElement("button");
+toggleDarkMode.textContent = "🌓 Alternar Tema";
+toggleDarkMode.style.position = "fixed";
+toggleDarkMode.style.top = "15px";
+toggleDarkMode.style.right = "15px";
+toggleDarkMode.style.padding = "10px 20px";
+toggleDarkMode.style.border = "none";
+toggleDarkMode.style.borderRadius = "5px";
+toggleDarkMode.style.backgroundColor = "#1976d2";
+toggleDarkMode.style.color = "#fff";
+toggleDarkMode.style.fontWeight = "bold";
+toggleDarkMode.style.cursor = "pointer";
+toggleDarkMode.style.zIndex = "1001";
+toggleDarkMode.style.boxShadow = "0 2px 5px rgba(0,0,0,0.3)";
+toggleDarkMode.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});
+document.body.appendChild(toggleDarkMode);

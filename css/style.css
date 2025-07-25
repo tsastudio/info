@@ -1,88 +1,161 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(to right, #e3f2fd, #ffffff);
     color: #333;
 }
 
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1100px;
     margin: auto;
-    overflow: hidden;
+    padding-bottom: 80px;
 }
 
 header {
-    background: #35424a;
+    background: linear-gradient(to right, #0d47a1, #1976d2);
     color: #ffffff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #e8491d 3px solid;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 5px solid #42a5f5;
 }
 
 header h1 {
-    text-align: center;
-    margin: 0;
-    font-size: 2em;
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
-.package {
-    background: #fff;
-    padding: 20px;
-    margin: 20px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.package, .additional-services {
+    background: #ffffff;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
-.package h2 {
-    color: #35424a;
+.package:hover, .additional-services:hover {
+    transform: translateY(-5px);
 }
 
-.package p {
-    margin: 5px 0;
+.package h2, .additional-services h3 {
+    color: #0d47a1;
+    margin-bottom: 15px;
 }
 
-.additional-services {
-    background: #fff;
-    padding: 20px;
-    margin: 20px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.additional-services h3 {
-    color: #35424a;
+ul {
+    padding-left: 20px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 15px;
 }
 
-table,
-th,
-td {
-    border: 1px solid #ddd;
+th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
 }
 
-th,
-td {
-    padding: 8px;
-    text-align: left;
+th {
+    background-color: #f1f1f1;
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background: #35424a;
+    background: rgba(0, 0, 255, 0.555);
     color: #ffffff;
-    position: fixed;
+    text-align: center;
+    padding: 15px 10px;
+    position: relative;
     width: 100%;
     bottom: 0;
+    z-index: 999;
 }
 
-@media (max-width: 600px) {
-    .container {
-        width: 95%;
-    }
+
+
+/* Animações gerais */
+.package, .additional-services {
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background: #1e1e1e;
+    border-bottom-color: #64b5f6;
+}
+
+body.dark-mode .package,
+body.dark-mode .additional-services {
+    background: #1f1f1f;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .package h2,
+body.dark-mode .additional-services h3 {
+    color: #90caf9;
+}
+
+body.dark-mode table {
+    border-color: #444;
+}
+
+body.dark-mode th {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+body.dark-mode td {
+    border-color: #333;
+    color: #ccc;
+}
+
+body.dark-mode footer {
+    background: #1e1e1e;
+}
+
+body.dark-mode .whatsapp-link {
+    background-color: #128C7E;
+}
+
+body.dark-mode .whatsapp-link a {
+    color: #fff;
+
+}
+
+
+
+
+
+.contact-buttons {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: green;
+    color: #fff;
+    text-decoration: skyblue;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
 }
